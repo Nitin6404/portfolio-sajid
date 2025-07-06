@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0f0f0f;
+  --foreground: #f9f9f9;
+  --card: #1a1a1a;
+  --card-foreground: #ffffff;
+  --popover: #1a1a1a;
+  --popover-foreground: #ffffff;
+  --primary: #e50914;
+  --primary-foreground: #ffffff;
+  --secondary: #b81d24;
+  --secondary-foreground: #ffffff;
+  --muted: #2a2a2a;
+  --muted-foreground: #aaaaaa;
+  --accent: #ff6f61;
+  --accent-foreground: #000000;
+  --destructive: #ff3b30;
+  --destructive-foreground: #ffffff;
+  --border: #333333;
+  --input: #2a2a2a;
+  --ring: #e50914;
+  --chart-1: #e50914;
+  --chart-2: #b81d24;
+  --chart-3: #ff6f61;
+  --chart-4: #aaaaaa;
+  --chart-5: #2a2a2a;
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #e50914;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ff6f61;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #333333;
+  --sidebar-ring: #e50914;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: var(--background);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--card);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Smooth animations */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Focus styles */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Loading animation for images */
+img {
+  transition: opacity 0.3s ease;
+}
+
+/* Custom gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Video overlay effects */
+.video-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(229, 9, 20, 0.1), rgba(0, 0, 0, 0.3));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.video-overlay:hover::before {
+  opacity: 1;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Utility classes for the new color scheme */
+.bg-background { background-color: var(--background); }
+.bg-foreground { background-color: var(--foreground); }
+.bg-card { background-color: var(--card); }
+.bg-card-foreground { background-color: var(--card-foreground); }
+.bg-popover { background-color: var(--popover); }
+.bg-popover-foreground { background-color: var(--popover-foreground); }
+.bg-primary { background-color: var(--primary); }
+.bg-primary-foreground { background-color: var(--primary-foreground); }
+.bg-secondary { background-color: var(--secondary); }
+.bg-secondary-foreground { background-color: var(--secondary-foreground); }
+.bg-muted { background-color: var(--muted); }
+.bg-muted-foreground { background-color: var(--muted-foreground); }
+.bg-accent { background-color: var(--accent); }
+.bg-accent-foreground { background-color: var(--accent-foreground); }
+.bg-destructive { background-color: var(--destructive); }
+.bg-destructive-foreground { background-color: var(--destructive-foreground); }
+.bg-border { background-color: var(--border); }
+.bg-input { background-color: var(--input); }
+.bg-ring { background-color: var(--ring); }
+
+.text-background { color: var(--background); }
+.text-foreground { color: var(--foreground); }
+.text-card { color: var(--card); }
+.text-card-foreground { color: var(--card-foreground); }
+.text-popover { color: var(--popover); }
+.text-popover-foreground { color: var(--popover-foreground); }
+.text-primary { color: var(--primary); }
+.text-primary-foreground { color: var(--primary-foreground); }
+.text-secondary { color: var(--secondary); }
+.text-secondary-foreground { color: var(--secondary-foreground); }
+.text-muted { color: var(--muted); }
+.text-muted-foreground { color: var(--muted-foreground); }
+.text-accent { color: var(--accent); }
+.text-accent-foreground { color: var(--accent-foreground); }
+.text-destructive { color: var(--destructive); }
+.text-destructive-foreground { color: var(--destructive-foreground); }
+.text-border { color: var(--border); }
+.text-input { color: var(--input); }
+.text-ring { color: var(--ring); }
+
+.border-background { border-color: var(--background); }
+.border-foreground { border-color: var(--foreground); }
+.border-card { border-color: var(--card); }
+.border-card-foreground { border-color: var(--card-foreground); }
+.border-popover { border-color: var(--popover); }
+.border-popover-foreground { border-color: var(--popover-foreground); }
+.border-primary { border-color: var(--primary); }
+.border-primary-foreground { border-color: var(--primary-foreground); }
+.border-secondary { border-color: var(--secondary); }
+.border-secondary-foreground { border-color: var(--secondary-foreground); }
+.border-muted { border-color: var(--muted); }
+.border-muted-foreground { border-color: var(--muted-foreground); }
+.border-accent { border-color: var(--accent); }
+.border-accent-foreground { border-color: var(--accent-foreground); }
+.border-destructive { border-color: var(--destructive); }
+.border-destructive-foreground { border-color: var(--destructive-foreground); }
+.border-border { border-color: var(--border); }
+.border-input { border-color: var(--input); }
+.border-ring { border-color: var(--ring); }
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+  }
+}
