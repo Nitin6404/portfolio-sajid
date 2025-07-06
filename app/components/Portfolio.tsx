@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import VideoDialog from './VideoDialog';
+import Image from 'next/image';
 
 const projects = [
   {
@@ -117,10 +118,12 @@ export default function Portfolio() {
               onClick={() => setSelectedProject(project)}
             >
               <div className="relative overflow-hidden rounded-xl bg-card border border-border hover:border-primary transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
-                <img
+                <Image
                   src={project.thumbnail}
                   alt={project.title}
                   className="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={500}
+                  height={500}
                 />
                 <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <div className="w-16 h-16 bg-primary hover:bg-secondary rounded-full flex items-center justify-center shadow-lg">

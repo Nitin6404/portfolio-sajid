@@ -30,10 +30,10 @@ export default function Contact() {
     <section id="contact" className="py-20 bg-card">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-center">
-          Let's Create Something Amazing
+          Let&apos;s Create Something Amazing
         </h2>
         <p className="text-xl text-muted-foreground mb-12 text-center max-w-2xl mx-auto">
-          Ready to bring your vision to life? Let's discuss your project and create compelling content together.
+          Ready to bring your vision to life? Let&apos;s discuss your project and create compelling content together.
         </p>
 
         <div className="max-w-6xl mx-auto">
@@ -43,7 +43,7 @@ export default function Contact() {
               <div>
                 <h3 className="text-2xl font-semibold text-foreground mb-4">Get In Touch</h3>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Ready to bring your vision to life? I'm here to help you create compelling video content 
+                  Ready to bring your vision to life? I&apos;m here to help you create compelling video content 
                   that resonates with your audience and achieves your goals.
                 </p>
               </div>
